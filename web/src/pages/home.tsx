@@ -6,6 +6,12 @@ import logo from '../assets/logo.svg'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+  function generateNonSense(){
+    let teste = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 2);
+    teste = teste + Math.floor(1000 + (9999 - 1000) * Math.random());
+    window.open('http://prnt.sc/'+teste);
+  }
+
   return (
     <div id='page-home'>
       <div className="content">
@@ -16,10 +22,10 @@ const Home = () => {
           <h1>Seu marketplace de coleta de resíduos</h1>
           <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
 
-          <Link to="/create-point">
+          <a onClick={generateNonSense}>
             <span><FiLogIn /></span>
             <strong>Cadastre um ponto de coleta</strong>
-          </Link>
+          </a>
         </main>
       </div>
     </div>
